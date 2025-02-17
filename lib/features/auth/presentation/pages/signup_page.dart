@@ -26,7 +26,6 @@ class _SignupPageState extends State<SignupPage> {
 
   @override
   Widget build(BuildContext context) {
-    // formKey.currentState!.validate();
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(15.0),
