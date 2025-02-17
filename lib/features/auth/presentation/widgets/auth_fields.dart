@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 
 class AuthFields extends StatelessWidget {
   final String hintText;
-  final bool pass;
+  final bool isPass;
   final TextEditingController controller;
 
   const AuthFields({
     super.key,
     required this.hintText,
-    this.pass = false,
+    this.isPass = false,
     required this.controller,
   });
 
@@ -18,7 +18,7 @@ class AuthFields extends StatelessWidget {
       decoration: InputDecoration(
         hintText: hintText,
       ),
-      obscureText: pass,
+      obscureText: isPass,
       //keyboardType: pass ? TextInputType.visiblePassword : TextInputType.text,
       validator: (value) {
         if (value!.isEmpty) {
