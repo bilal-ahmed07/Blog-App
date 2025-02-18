@@ -46,7 +46,7 @@ class _SignupPageState extends State<SignupPage> {
               const SizedBox(height: 15),
               AuthFields(hintText: "Email", controller: emailController,),
               const SizedBox(height: 15),
-              AuthFields(hintText: "Password", pass: true, controller: passwordController,),
+              AuthFields(hintText: "Password", isPass: true, controller: passwordController,),
               const SizedBox(height: 20),
               const AppGradientButton(buttonText: "Sign up",),
               const SizedBox(height: 20),

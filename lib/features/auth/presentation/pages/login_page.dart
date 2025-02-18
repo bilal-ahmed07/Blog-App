@@ -42,7 +42,7 @@ class _LoginPageState extends State<LoginPage> {
               const SizedBox(height: 30),
               AuthFields(hintText: "Email", controller: emailController,),
               const SizedBox(height: 15),
-              AuthFields(hintText: "Password", pass: true, controller: passwordController,),
+              AuthFields(hintText: "Password", isPass: true, controller: passwordController,),
               const SizedBox(height: 20),
               const AppGradientButton(buttonText: "Login"),
               const SizedBox(height: 20),
