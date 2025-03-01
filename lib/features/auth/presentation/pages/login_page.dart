@@ -2,8 +2,15 @@ import 'package:blog_app/core/theme/colors.dart';
 import 'package:blog_app/features/auth/presentation/widgets/auth_fields.dart';
 import 'package:blog_app/features/auth/presentation/widgets/auth_gradient_button.dart';
 import 'package:flutter/material.dart';
+import 'signup_page.dart';
 
 class LoginPage extends StatefulWidget {
+  static route() {
+    return MaterialPageRoute(
+      builder: (context) => const LoginPage(),
+    );
+  }
+
   const LoginPage({super.key});
 
   @override
@@ -40,25 +47,41 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               const SizedBox(height: 30),
-              AuthFields(hintText: "Email", controller: emailController,),
+              AuthFields(
+                hintText: "Email",
+                controller: emailController,
+              ),
               const SizedBox(height: 15),
-              AuthFields(hintText: "Password", isPass: true, controller: passwordController,),
+              AuthFields(
+                hintText: "Password",
+                isPass: true,
+                controller: passwordController,
+              ),
               const SizedBox(height: 20),
-              const AppGradientButton(buttonText: "Login"),
+              AppGradientButton(
+                buttonText: "Login",
+                onPressed: () {},
+              ),
               const SizedBox(height: 20),
-              RichText(
-                text: TextSpan(
-                  text: "Don't have an account? ",
-                  style: Theme.of(context).textTheme.titleMedium,
-                  children: [
-                    TextSpan(
-                      text: "Sign up",
-                      style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                            color: AppPallete.gradient2 ,
-                            fontWeight: FontWeight.bold,
-                          ),
-                    ),
-                  ],
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(context, SignupPage.route());
+                },
+                child: RichText(
+                  text: TextSpan(
+                    text: "Don't have an account? ",
+                    style: Theme.of(context).textTheme.titleMedium,
+                    children: [
+                      TextSpan(
+                        text: "Sign up",
+                        style:
+                            Theme.of(context).textTheme.titleMedium?.copyWith(
+                                  color: AppPallete.gradient2,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ],

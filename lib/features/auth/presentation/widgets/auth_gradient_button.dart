@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 
 class AppGradientButton extends StatelessWidget {
   final String buttonText;
+  final VoidCallback onPressed;
 
   const AppGradientButton({
     super.key,
     required this.buttonText,
+    required this.onPressed,
   });
 
   @override
@@ -21,9 +23,7 @@ class AppGradientButton extends StatelessWidget {
         ),
       ),
       child: ElevatedButton(
-        onPressed: () {
-          // button press logic here
-        },
+        onPressed: onPressed,
         style: ElevatedButton.styleFrom(
           fixedSize: const Size(395, 55),
           backgroundColor: AppPallete.transparentColor,
@@ -32,6 +32,7 @@ class AppGradientButton extends StatelessWidget {
         child: Text(
           buttonText,
           style: const TextStyle(
+            color: Colors.white,
             fontSize: 17,
             fontWeight: FontWeight.w600,
           ),
